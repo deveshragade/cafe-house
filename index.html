@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe House – The Brand of Foodies | Dhule</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&family=Playfair+Display:ital,wght@1,600&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkCoffee: '#1B1B1B',
+                        espresso: '#3A2E2A',
+                        caramel: '#C68642',
+                        foodOrange: '#FF7A18',
+                        creamWhite: '#F5F5F5',
+                        softGray: '#2A2A2A',
+                        mutedGray: '#444444',
+                        lightCaramel: '#FFB347',
+                    },
+                    fontFamily: {
+                        heading: ['Poppins', 'Montserrat', 'sans-serif'],
+                        body: ['Open Sans', 'sans-serif'],
+                        special: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Open Sans', sans-serif; background-color: #1B1B1B; color: #F5F5F5; }
+        .hero-overlay { background: rgba(0, 0, 0, 0.65); }
+        .glass-nav { background: rgba(27, 27, 27, 0.9); backdrop-filter: blur(10px); }
+        .card-hover:hover { transform: translateY(-10px); transition: all 0.3s ease; }
+        .btn-gradient { background: linear-gradient(90deg, #FF7A18, #C68642); transition: 0.3s; }
+        .btn-gradient:hover { background: linear-gradient(90deg, #C68642, #FF7A18); transform: scale(1.05); }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-mutedGray">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-heading font-bold text-caramel">CAFE<span class="text-foodOrange">HOUSE</span></a>
+            
+            <div class="hidden md:flex space-x-8 font-heading text-sm uppercase tracking-widest">
+                <a href="#home" class="hover:text-caramel transition">Home</a>
+                <a href="#about" class="hover:text-caramel transition">About</a>
+                <a href="#menu" class="hover:text-caramel transition">Menu</a>
+                <a href="#gallery" class="hover:text-caramel transition">Gallery</a>
+                <a href="#contact" class="hover:text-caramel transition">Contact</a>
+            </div>
+
+            <a href="https://wa.me/910000000000" class="hidden md:block bg-foodOrange px-6 py-2 rounded-full font-bold text-sm btn-gradient">ORDER NOW</a>
+            
+            <!-- Mobile Toggle -->
+            <button class="md:hidden text-2xl" id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <div class="absolute inset-0 hero-overlay"></div>
+        <div class="relative z-10 text-center px-4" data-aos="zoom-in" data-aos-duration="1000">
+            <h1 class="font-heading text-5xl md:text-7xl font-bold mb-4">Cafe House</h1>
+            <p class="font-special text-xl md:text-3xl text-lightCaramel mb-8 italic">“The Brand of Foodies – Where Coffee Meets Cravings”</p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#menu" class="bg-foodOrange px-8 py-3 rounded-full font-bold text-lg btn-gradient">View Menu</a>
+                <a href="#visit" class="border-2 border-creamWhite px-8 py-3 rounded-full font-bold text-lg hover:bg-creamWhite hover:text-darkCoffee transition">Visit Cafe</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-espresso">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cafe Interior" class="rounded-2xl shadow-2xl border-4 border-caramel/20">
+            </div>
+            <div data-aos="fade-left">
+                <h2 class="font-heading text-4xl font-bold mb-6">Welcome to <span class="text-caramel">Cafe House</span></h2>
+                <p class="text-gray-300 leading-relaxed mb-6">
+                    Located in the heart of **Dhule**, Cafe House is more than just a coffee shop—it's a hub for foodies and friends. Whether you're a college student looking for a study spot or a group looking to hang out, we provide the perfect cozy atmosphere with high-speed vibes and Instagrammable corners.
+                </p>
+                <p class="text-gray-300 mb-8 italic border-l-4 border-foodOrange pl-4">
+                    "From sizzling burgers to creamy cold coffees, we serve happiness in every bite."
+                </p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-check-circle text-caramel"></i>
+                        <span>Quality Food</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-check-circle text-caramel"></i>
+                        <span>Friendly Vibes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Menu Section -->
+    <section id="menu" class="py-20 bg-darkCoffee">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="font-heading text-4xl font-bold mb-2" data-aos="fade-up">Popular Menu</h2>
+            <div class="w-24 h-1 bg-foodOrange mx-auto mb-12"></div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Burger -->
+                <div class="bg-softGray rounded-3xl overflow-hidden card-hover border border-mutedGray" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" class="w-full h-48 object-cover">
+                    <div class="p-6 text-left">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-bold">Classic Monster Burger</h3>
+                            <span class="text-foodOrange font-bold">₹149</span>
+                        </div>
+                        <p class="text-sm text-gray-400">Juicy veg patty with melted cheese and signature sauce.</p>
+                    </div>
+                </div>
+                <!-- Pizza -->
+                <div class="bg-softGray rounded-3xl overflow-hidden card-hover border border-mutedGray" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" class="w-full h-48 object-cover">
+                    <div class="p-6 text-left">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-bold">Cheese Burst Pizza</h3>
+                            <span class="text-foodOrange font-bold">₹249</span>
+                        </div>
+                        <p class="text-sm text-gray-400">Loaded with mozzarella and fresh garden veggies.</p>
+                    </div>
+                </div>
+                <!-- Cold Coffee -->
+                <div class="bg-softGray rounded-3xl overflow-hidden card-hover border border-mutedGray" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" class="w-full h-48 object-cover">
+                    <div class="p-6 text-left">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-bold">Signature Cold Coffee</h3>
+                            <span class="text-foodOrange font-bold">₹99</span>
+                        </div>
+                        <p class="text-sm text-gray-400">Our bestseller! Creamy, frothy, and perfectly chilled.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="mt-12 px-10 py-3 border-2 border-caramel text-caramel font-bold rounded-full hover:bg-caramel hover:text-white transition">Download Full Menu</button>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-20 bg-espresso">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <div data-aos="zoom-in" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-softGray rounded-full flex items-center justify-center mx-auto mb-4 text-caramel text-2xl shadow-lg">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">Fresh Ingredients</h4>
+                    <p class="text-sm text-gray-400">Quality checked daily</p>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-softGray rounded-full flex items-center justify-center mx-auto mb-4 text-caramel text-2xl shadow-lg">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">Fast Service</h4>
+                    <p class="text-sm text-gray-400">No more long waits</p>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-softGray rounded-full flex items-center justify-center mx-auto mb-4 text-caramel text-2xl shadow-lg">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">Student Prices</h4>
+                    <p class="text-sm text-gray-400">Light on your pocket</p>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="400">
+                    <div class="w-16 h-16 bg-softGray rounded-full flex items-center justify-center mx-auto mb-4 text-caramel text-2xl shadow-lg">
+                        <i class="fas fa-camera-retro"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">Perfect Hangout</h4>
+                    <p class="text-sm text-gray-400">Instagram ready corners</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Food Gallery -->
+    <section id="gallery" class="py-20 bg-darkCoffee">
+        <div class="container mx-auto px-6">
+            <h2 class="font-heading text-4xl font-bold text-center mb-12">Social <span class="text-foodOrange">Spotlight</span></h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=400&q=80" class="rounded-xl hover:opacity-75 transition cursor-pointer" data-aos="fade-up">
+                <img src="https://images.unsplash.com/photo-1541167760496-162955ed8a9f?auto=format&fit=crop&w=400&q=80" class="rounded-xl hover:opacity-75 transition cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=400&q=80" class="rounded-xl hover:opacity-75 transition cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=400&q=80" class="rounded-xl hover:opacity-75 transition cursor-pointer" data-aos="fade-up" data-aos-delay="300">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-espresso">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-darkCoffee p-8 rounded-2xl border-t-4 border-caramel" data-aos="flip-left">
+                    <div class="flex text-yellow-500 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="italic mb-4">“Best café in Dhule! Amazing burgers and the coffee is actually premium. A daily spot for us.”</p>
+                    <h5 class="font-bold">- Rahul Sharma</h5>
+                </div>
+                <div class="bg-darkCoffee p-8 rounded-2xl border-t-4 border-foodOrange" data-aos="flip-left" data-aos-delay="100">
+                    <div class="flex text-yellow-500 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="italic mb-4">“Perfect place to chill with friends. The aesthetics are 10/10 and the prices are student-friendly!”</p>
+                    <h5 class="font-bold">- Priya Patil</h5>
+                </div>
+                <div class="bg-darkCoffee p-8 rounded-2xl border-t-4 border-caramel" data-aos="flip-left" data-aos-delay="200">
+                    <div class="flex text-yellow-500 mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="italic mb-4">“Great taste! The pasta is a must-try. Definitely the most energetic café vibe in town.”</p>
+                    <h5 class="font-bold">- Amit Verma</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visit Us -->
+    <section id="visit" class="py-20 bg-darkCoffee">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <h2 class="font-heading text-4xl font-bold mb-6">Visit <span class="text-caramel">Us</span></h2>
+                    <p class="mb-4 flex items-center"><i class="fas fa-map-marker-alt text-foodOrange mr-4 text-xl"></i> Dhule, Maharashtra, India</p>
+                    <p class="mb-4 flex items-center"><i class="fas fa-clock text-foodOrange mr-4 text-xl"></i> 8 AM – 10 PM (Everyday)</p>
+                    <p class="mb-8 flex items-center"><i class="fas fa-phone-alt text-foodOrange mr-4 text-xl"></i> +91 98765 43210</p>
+                    <a href="tel:+919876543210" class="bg-foodOrange px-8 py-3 rounded-full font-bold inline-block btn-gradient">Call Now</a>
+                </div>
+                <div class="rounded-2xl overflow-hidden h-64 md:h-full shadow-xl" data-aos="fade-left">
+                    <!-- Placeholder Map -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59663.78486001099!2d74.7431289133869!3d20.902812973167442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdec30d2011326d%3A0x600c3b00685608!2sDhule%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1690000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="py-20 bg-espresso">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="bg-softGray p-10 rounded-3xl shadow-2xl border border-mutedGray" data-aos="zoom-in">
+                <h2 class="font-heading text-3xl font-bold text-center mb-8">Send us a Message</h2>
+                <form class="grid md:grid-cols-2 gap-6">
+                    <input type="text" placeholder="Your Name" class="bg-darkCoffee border border-mutedGray rounded-xl p-4 focus:outline-none focus:border-caramel">
+                    <input type="email" placeholder="Your Email" class="bg-darkCoffee border border-mutedGray rounded-xl p-4 focus:outline-none focus:border-caramel">
+                    <textarea placeholder="Your Message" class="md:col-span-2 bg-darkCoffee border border-mutedGray rounded-xl p-4 h-32 focus:outline-none focus:border-caramel"></textarea>
+                    <button class="md:col-span-2 bg-foodOrange py-4 rounded-xl font-bold text-lg hover:bg-lightCaramel transition">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darkCoffee pt-16 pb-8 border-t border-mutedGray">
+        <div class="container mx-auto px-6 grid md:grid-cols-3 gap-12 mb-12 text-center md:text-left">
+            <div>
+                <h3 class="text-2xl font-heading font-bold text-caramel mb-4">CAFE HOUSE</h3>
+                <p class="text-gray-400 text-sm">The ultimate destination for foodies in Dhule. We bring people together over great coffee and even better food.</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 uppercase tracking-widest text-foodOrange">Quick Links</h4>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="#home" class="hover:text-caramel">Home</a></li>
+                    <li><a href="#menu" class="hover:text-caramel">Menu</a></li>
+                    <li><a href="#gallery" class="hover:text-caramel">Gallery</a></li>
+                    <li><a href="#contact" class="hover:text-caramel">Visit Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 uppercase tracking-widest text-foodOrange">Follow the Vibe</h4>
+                <div class="flex justify-center md:justify-start space-x-6 text-2xl">
+                    <a href="#" class="hover:text-caramel transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-caramel transition"><i class="fab fa-facebook"></i></a>
+                    <a href="https://wa.me/910000000000" class="hover:text-caramel transition"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-mutedGray pt-8 text-center text-gray-500 text-sm">
+            <p>&copy; 2023 Cafe House – The Brand of Foodies. All Rights Reserved. Built with ❤️ for Dhule.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('menuBtn');
+        const navLinks = document.querySelector('.md\\:flex.space-x-8');
+        
+        menuBtn.addEventListener('click', () => {
+            // Simple toggle for demo - for full mobile nav you'd use a hidden menu div
+            alert("Mobile menu clicked! In a production site, this would open a side drawer.");
+        });
+    </script>
+</body>
+</html>
